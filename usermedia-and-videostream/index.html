@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+
+<button id="use-camera" style="height: 10vh;">Camera</button><br/>
+<button id="use-video" style="height: 10vh;">Video</button><br/>
+
+<div>
+	<video
+		id="video"
+		crossorigin="anonymous"
+		controls
+		loop
+		style="width: 200px; height: 200px;"
+		src="./src/video.mp4"/>
+</div>
+<video autoplay id="v1" style="width: 100px; height: 100px; border: solid;"></video>
+<video autoplay id="v2" style="width: 100px; height: 100px; border: solid;"></video>
+
+	<script src="src/index.js">
+	</script>
+</body>
+
+</html>
