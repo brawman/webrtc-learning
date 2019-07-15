@@ -33,19 +33,20 @@ async function init() {
     e.candidate && sender.addIceCandidate(e.candidate);
   };
 
-  addCameraEvent(sender, cameraStream, receiver);
+  addCameraModeEvent(sender, cameraStream, receiver);
 
   video.onplay = async () => {
     window.videoStream = video.captureStream();
-    addVideoEvent(sender, receiver);
+    addVideoModeEvent(sender, receiver);
   };
 }
 
 init();
 
-function addVideoEvent(sender, receiver) {
+function addVideoModeEvent(sender, receiver) {
   document.getElementById("use-video").addEventListener("click", async e => {
     console.log("비디오로 세팅");
+
     if (sender.getSenders().length) {
       window.videoStream.getTracks().forEach(async (track, i) => {
         const senderToReplace = sender.getSenders().find(sender => {
@@ -58,6 +59,7 @@ function addVideoEvent(sender, receiver) {
       window.videoStream.getTracks().forEach(track => {
         sender.addTrack(track);
       });
+
       const senderDesc = await sender.createOffer({
         offerToReceiveVideo: false,
         offerToReceiveAudio: false,
@@ -78,9 +80,10 @@ function addVideoEvent(sender, receiver) {
   });
 }
 
-function addCameraEvent(sender, cameraStream, receiver) {
+function addCameraModeEvent(sender, cameraStream, receiver) {
   document.getElementById("use-camera").addEventListener("click", async e => {
     console.log("카메라로 세팅");
+
     if (sender.getSenders().length) {
       cameraStream.getTracks().forEach(async (track, i) => {
         const senderToReplace = sender.getSenders().find(sender => {
