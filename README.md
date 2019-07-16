@@ -17,3 +17,4 @@
 ](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling)
 - [Annotated Example SDP for WebRTC](https://www.ietf.org/id/draft-ietf-rtcweb-sdp-11.txt)
 - [How do we pass SDP to initiate a call? (Video)](https://webrtcglossary.com/jsep/)
+- [Examples Written By W3C](https://www.w3.org/TR/webrtc/#examples-and-call-flows)
